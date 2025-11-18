@@ -1,0 +1,80 @@
+.cta {
+    position: fixed;
+    bottom: 20px;
+    background: linear-gradient(to top right, #673bb6, #4337cc);
+    padding: 15px;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+/* ساختار دسکتاپ */
+.cta-row {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.city {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 6px;
+    justify-content: center;
+}
+
+.phones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.phone {
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* ========================================= */
+/*         نسخه تبلت + موبایل (دیزاین جدید) */
+/* ========================================= */
+
+@media(max-width: 992px) {
+
+    .cta {
+        width: 90vw;
+    }
+
+    /* شهر افقی شود */
+    .city {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /* شماره‌ها کنار هم قرار بگیرند */
+    .phones {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .phone {
+        flex: 1;
+    }
+
+    /* ساختار دو ستونه */
+    .cta-row {
+        grid-template-columns: 70px 1fr;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+}
