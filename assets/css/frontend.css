@@ -42,6 +42,16 @@
     font-weight: bold;
 }
 
+.phones a.phone {
+    display: block;
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
 
 /* ========================================= */
 /*         نسخه تبلت + موبایل (دیزاین جدید) */
