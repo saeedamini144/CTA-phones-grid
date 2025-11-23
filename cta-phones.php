@@ -24,3 +24,22 @@ require_once CTA_PHONES_PATH . "includes/settings-page.php";
 add_action("wp_enqueue_scripts", function () {
     wp_enqueue_style("cta-phones-style", CTA_PHONES_URL . "assets/css/frontend.css");
 });
+
+function cta_phones_global_output()
+{
+
+    if (get_option('cta_phones_global_display') != '1') {
+        return;
+    }
+
+    if (is_admin()) {
+        return;
+    }
+
+    if (is_singular() && has_shortcode(get_post()->post_content, 'cta_phones')) {
+        return;
+    }
+
+    echo do_shortcode('[cta_phones]');
+}
+add_action('wp_footer', 'cta_phones_global_output');

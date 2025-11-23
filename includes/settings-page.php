@@ -20,6 +20,7 @@ function cta_phones_register_settings()
 {
     register_setting('cta_phones_settings_group', 'cta_phones_cities');
     register_setting('cta_phones_settings_group', 'cta_phones_bgcolor');
+    register_setting('cta_phones_settings_group', 'cta_phones_global_display');
 }
 add_action('admin_init', 'cta_phones_register_settings');
 
@@ -65,8 +66,26 @@ function cta_phones_render_settings_page()
             <br>
 
             <button type="button" class="button button-primary" id="add-row">افزودن شهر</button>
+
             <label for="bgcolor">انتخاب رنگ</label>
             <input type="color" name="cta_phones_bgcolor" id="bgcolor" value="<?php echo esc_attr(get_option('cta_phones_bgcolor', '#673bb6')); ?>">
+
+            <br><br>
+
+            <tr>
+                <th>نمایش در تمام صفحات سایت</th>
+                <td>
+                    <label style="display:flex;align-items:center;gap:10px;">
+                        <input type="checkbox"
+                            name="cta_phones_global_display"
+                            value="1"
+                            <?php checked(get_option('cta_phones_global_display'), '1'); ?>>
+                        <span>فعال</span>
+                    </label>
+                    <p class="description"> در صورت فعال بودن، باکس تماس در تمام صفحات سایت نمایش داده می‌شود.در غیر اینصورت با استفاده از شورتکد در هر بخش از سایت که نیاز به نمایش محتوای تماس دارید از شورتکد استفاده کنید</p>
+                </td>
+            </tr>
+
 
             <?php submit_button(); ?>
         </form>
