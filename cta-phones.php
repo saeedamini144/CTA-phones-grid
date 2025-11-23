@@ -4,8 +4,10 @@
  * Plugin Name: cta-phones
  * Description: نمایش باکس تماس با شهرها و شماره تلفن‌ها.
  * Version: 1.0
- * Author: Saeed
  * Text Domain: cta-phones
+ * Version: 1.0.0
+ * Author: Saeed Amini
+ * Author URI: https://websemicolon.com
 
  */
 

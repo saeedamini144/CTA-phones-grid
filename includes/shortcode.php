@@ -6,6 +6,8 @@ function cta_phones_shortcode()
 {
 
     $cities = get_option('cta_phones_cities', []);
+    $bgcolor = get_option('cta_phones_bgcolor', '#673bb6');
+
 
     if (empty($cities)) {
         return ''; // داده‌ای نبود → خروجی خالی
@@ -13,7 +15,7 @@ function cta_phones_shortcode()
 
     ob_start();
 
-    echo '<div class="cta">';
+    echo '<div class="cta" style="background:' . esc_attr($bgcolor) . '">';
 
     foreach ($cities as $city) {
 

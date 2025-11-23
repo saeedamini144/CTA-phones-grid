@@ -1,7 +1,7 @@
 .cta {
     position: fixed;
     bottom: 20px;
-    background: linear-gradient(to top right, #673bb6, #4337cc);
+    /* background: linear-gradient(to top right, #673bb6, #4337cc); */
     padding: 15px;
     display: inline-block;
     border-radius: 8px;
@@ -27,6 +27,8 @@
     background-color: white;
     border-radius: 6px;
     justify-content: center;
+    font-family: inherit;
+    font-size: medium;
 }
 
 .phones {
@@ -41,6 +43,7 @@
     border-radius: 6px;
     text-align: center;
     font-weight: bold;
+    font-family: inherit;
 }
 
 .phones a.phone {
@@ -52,6 +55,8 @@
     font-weight: bold;
     text-decoration: none;
     color: black;
+    font-family: inherit;
+    font-size: medium;
 }
 
 /* ========================================= */
@@ -61,7 +66,7 @@
 @media(max-width: 992px) {
 
     .cta {
-        width: 90vw;
+        width: 80vw;
     }
 
     /* شهر افقی شود */

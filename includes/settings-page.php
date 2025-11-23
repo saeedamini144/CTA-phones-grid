@@ -2,7 +2,6 @@
 
 if (!defined('ABSPATH')) exit;
 
-add_action('admin_menu', 'cta_phones_add_admin_page');
 function cta_phones_add_admin_page()
 {
     add_options_page(
@@ -13,12 +12,17 @@ function cta_phones_add_admin_page()
         'cta_phones_render_settings_page'
     );
 }
+add_action('admin_menu', 'cta_phones_add_admin_page');
 
-add_action('admin_init', 'cta_phones_register_settings');
+
+
 function cta_phones_register_settings()
 {
     register_setting('cta_phones_settings_group', 'cta_phones_cities');
+    register_setting('cta_phones_settings_group', 'cta_phones_bgcolor');
 }
+add_action('admin_init', 'cta_phones_register_settings');
+
 
 function cta_phones_render_settings_page()
 {
@@ -27,7 +31,7 @@ function cta_phones_render_settings_page()
 
     <div class="wrap">
         <h1>تنظیمات باکس تماس</h1>
-
+        <p>شورتکد: [cta_phones]</p>
         <form method="post" action="options.php">
             <?php settings_fields('cta_phones_settings_group'); ?>
 
@@ -61,6 +65,8 @@ function cta_phones_render_settings_page()
             <br>
 
             <button type="button" class="button button-primary" id="add-row">افزودن شهر</button>
+            <label for="bgcolor">انتخاب رنگ</label>
+            <input type="color" name="cta_phones_bgcolor" id="bgcolor" value="<?php echo esc_attr(get_option('cta_phones_bgcolor', '#673bb6')); ?>">
 
             <?php submit_button(); ?>
         </form>
